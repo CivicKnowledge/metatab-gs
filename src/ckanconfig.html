@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+  </head>
+  <br>
+  <div id='message'></div>
+  <p>
+  Enter connection credentials for the CKAN instance you'd like to publish to.
+  </p>
+  <form>
+    Base URL of CKAN Instance:<br>
+    <input type="text" name="url" size="80" value="<?=url?>">
+    <br>
+    Access Key:<br>
+    <input type="text" name="key" size="80" value="<?=key?>">
+    <br>
+    <br>
+    <script>
+      function onFailure(error) {
+        var div = document.getElementById('message');
+        div.innerHTML = "ERROR: " + error.message;
+      }
+
+     </script>
+     <input type="button" value="Submit"
+        onclick="google.script.run
+            .withSuccessHandler(google.script.host.close)
+            .withFailureHandler(onFailure)
+            .setCkanSettings(this.parentNode)" />
+    </form>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+  </head>
+  <body>
+    <p>JSON published to:</p>
+    <p><a href="<?=mdjUrl?>"><?=mdjUrl?></a></p>
+
+    <p>JSON rows published to:</p>
+    <p><a href="<?=mrjUrl?>"><?=mrjUrl?></a></p>
+
+    <? if (dataUrl) { ?>
+    <p>CSV Data published to:</p>
+    <p><a href="<?=dataUrl?>"><?=dataUrl?></a></p>
+    <? } ?>
+
+    <input type="button" value="Close" onclick="google.script.host.close()" />
+    
+  </body>
+</html>

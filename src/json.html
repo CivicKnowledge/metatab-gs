@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+  </head>
+  <body>
+    <? var json = JSON.stringify(parseMetatabToDict(metaSheetName), null, 4); ?>
+    <pre><?=json?></pre>
+    <input type="button" value="Close" onclick="google.script.host.close()" />
+  </body>
+</html>
