@@ -2,6 +2,14 @@ var metaSheetName = 'Meta'
 var schemaSheetName = 'Schema'
 var dataSheetName = 'Data'
 
+// Script Properties
+// <template_key_name> The name of a template to use for initialization -> Google Id for a template spreadsheet. 
+// template_id The Google Id for the default template
+// decl.metatab.json URl to download the metatab schema document in JSON format. 
+
+// Document Properties
+// workflowStarted
+
 
 function initialize(){
   addMenu(null);
