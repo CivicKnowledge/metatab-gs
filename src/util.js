@@ -68,6 +68,15 @@ function setIdentifiers(){
  
   var decl = getDeclarations();
 
+  if (false){
+    // getNextNumber will hit a remote Numers server to get a unique number.
+    // Maybe don't really want to do that. 
+    var v = getTermValue('MetatabId',0);
+    
+    if (!v){
+      setTermValue('MetatabId',getNextNumber(), 0);
+    }
+  }
   
   var v = getTermValue('Identifier',0);
   
@@ -176,7 +185,9 @@ function moveSheetIfExists(sheetName){
 // same name. Moves an existing sheet by that name to 'Old '+name.
 // Silently fails if the remote sheet doesn't exists
 function copyRemoteSheet(docId, sheetName){
-
+  
+  const as = SpreadsheetApp.getActiveSpreadsheet()
+  
   const remoteSheet = SpreadsheetApp
   .openById(docId) 
   .getSheetByName(sheetName);
@@ -226,7 +237,7 @@ function getDeclarations(){
   const url = PropertiesService.getScriptProperties().getProperty('decl.metatab.json')
   
   const cache = CacheService.getScriptCache();
-    cache.remove(url);
+  //cache.remove(url);
   var declarations = cache.get(url);
   
   if (declarations == null) {

@@ -48,6 +48,7 @@ function addMenu(e){
 }
 
 
+
 function onEdit(e){
   // Set a comment on the edited cell to indicate when it was changed.
   //var range = e.range;
@@ -71,6 +72,7 @@ function onInstall(e) {
 function setProps(){
 
 };
+
 
 
 
